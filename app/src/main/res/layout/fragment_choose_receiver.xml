@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ChooseReceiverFragment">
 
+
     <EditText
         android:id="@+id/et_receiver_name"
         android:layout_width="0dp"
