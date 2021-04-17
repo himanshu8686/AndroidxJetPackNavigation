@@ -24,5 +24,9 @@ class ChooseReceiverFragment : Fragment(R.layout.fragment_choose_receiver){
             findNavController().navigate(action)
 
         }
+
+        btn_cancel.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }
