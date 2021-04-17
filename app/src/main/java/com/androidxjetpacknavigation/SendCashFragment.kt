@@ -13,14 +13,23 @@ import kotlinx.android.synthetic.main.fragment_send_cash.*
 class SendCashFragment : Fragment(R.layout.fragment_send_cash){
 
     private val args:SendCashFragmentArgs by navArgs()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val receiverName = args.receiverName
-        val amount = args.amount
 
         tv_receiver.text = "Send cash to $receiverName"
-        et_amount.setText (amount.toString())
+
+        btn_send.setOnClickListener {
+
+            if (et_amount.text.toString().isEmpty()){
+                return@setOnClickListener
+            }
+            val amount = et_amount.text.toString().toLong()
+            val action = SendCashFragmentDirections.actionSendCashFragmentToConfirmDialogFragment(receiverName,amount)
+            findNavController().navigate(action)
+        }
 
     }
 
