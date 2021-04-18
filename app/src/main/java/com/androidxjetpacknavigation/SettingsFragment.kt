@@ -19,5 +19,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings){
             val defaultAmount = et_default_amount.text.toString().toLong()
             SampleData.defaultAmount.value = defaultAmount
         }
+
+        btn_about_app.setOnClickListener {
+            val action = MainNavGraphDirections.actionGlobalAboutAppFragment()
+            findNavController().navigate(action)
+        }
     }
 }
