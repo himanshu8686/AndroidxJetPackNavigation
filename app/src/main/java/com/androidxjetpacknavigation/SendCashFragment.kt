@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_send_cash.*
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 class SendCashFragment : Fragment(R.layout.fragment_send_cash){
 
@@ -20,6 +21,11 @@ class SendCashFragment : Fragment(R.layout.fragment_send_cash){
         val receiverName = args.receiverName
 
         tv_receiver.text = "Send cash to $receiverName"
+
+        et_amount.setText(SampleData.defaultAmount.value.toString())
+        SampleData.defaultAmount.observe(viewLifecycleOwner){
+            et_amount.setText(it.toString())
+        }
 
         btn_send.setOnClickListener {
 

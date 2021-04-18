@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/sendCashFragment"
         android:name="com.androidxjetpacknavigation.SendCashFragment"
-        android:label="Send Cash"
+        android:label="Send Cash - {receiverName}"
         tools:layout="@layout/fragment_send_cash" >
         <argument
             android:name="receiverName"
@@ -91,4 +91,9 @@
             android:name="amount"
             app:argType="long" />
     </dialog>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.androidxjetpacknavigation.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
